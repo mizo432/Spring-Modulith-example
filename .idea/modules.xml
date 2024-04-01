@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.test.iml" />
     </modules>
   </component>
 </project>
