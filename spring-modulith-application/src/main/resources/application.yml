@@ -1,0 +1,11 @@
+server:
+  shutdown: graceful
+  
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    defer-datasource-initialization: true
+  threads:
+    virtual:
+      enabled: true
