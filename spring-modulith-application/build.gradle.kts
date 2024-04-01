@@ -21,6 +21,8 @@ repositories {
 }
 
 extra["springModulithVersion"] = "1.1.3"
+extra["jmoleculesBomVersion"] = "2023.1.2"
+extra["archunitVersion"] = "1.2.1"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -40,11 +42,20 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.modulith:spring-modulith-starter-test")
+    implementation("org.jmolecules:jmolecules-layered-architecture")
+    implementation("org.jmolecules:jmolecules-onion-architecture")
+
+    testImplementation("org.jmolecules.integrations:jmolecules-archunit")
+    testImplementation("com.tngtech.archunit:archunit-junit5:1.2.1")
+
 }
 
 dependencyManagement {
     imports {
         mavenBom("org.springframework.modulith:spring-modulith-bom:${property("springModulithVersion")}")
+    }
+    imports {
+        mavenBom("org.jmolecules:jmolecules-bom:${property("jmoleculesBomVersion")}")
     }
 }
 
