@@ -18,7 +18,6 @@ import undecided.demo.catalog.domain.CatalogRepository;
 public class CatalogManagement {
 
   private final CatalogRepository catalogRepository;
-  private final BookMapper mapper;
   private final ApplicationEventPublisher events;
 
   /**
@@ -27,10 +26,10 @@ public class CatalogManagement {
   public BookDto addToCatalog(String title, CatalogBook.Barcode catalogNumber, String isbn,
       String authorName) {
     var book = new CatalogBook(title, catalogNumber, isbn, new CatalogBook.Author(authorName));
-    var dto = mapper.toDto(catalogRepository.save(book));
+    var dto = BookDto.fromEntity(catalogRepository.save(book));
     events.publishEvent(
-        new BookAddedToCatalog(dto.title(), dto.catalogNumber().barcode(), dto.isbn(),
-            dto.author().name()));
+        new BookAddedToCatalog(book.getTitle(), book.getCatalogNumber().barcode(), book.getIsbn(),
+            book.getAuthor().name()));
     return dto;
   }
 

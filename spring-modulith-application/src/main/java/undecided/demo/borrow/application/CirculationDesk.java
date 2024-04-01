@@ -12,6 +12,10 @@ import undecided.demo.borrow.domain.Hold;
 import undecided.demo.borrow.domain.HoldEventPublisher;
 import undecided.demo.borrow.domain.HoldRepository;
 
+/**
+ * The CirculationDesk class represents a circulation desk in a library. It handles activities
+ * related to placing holds, adding books, holding books, and locating holds.
+ */
 @Service
 @Transactional
 public class CirculationDesk {
