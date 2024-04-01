@@ -2,16 +2,15 @@ package undecided.demo.borrow.application;
 
 import java.util.Optional;
 import java.util.UUID;
-import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.BookPlacedOnHold;
+import undecided.demo.borrow.domain.Book.AddBook;
+import undecided.demo.borrow.domain.Book.Barcode;
 import undecided.demo.borrow.domain.BookRepository;
 import undecided.demo.borrow.domain.Hold;
 import undecided.demo.borrow.domain.HoldEventPublisher;
 import undecided.demo.borrow.domain.HoldRepository;
-import undecided.demo.catalog.BookAddedToCatalog;
 
 @Service
 @Transactional
@@ -44,19 +43,16 @@ public class CirculationDesk {
         .map(HoldDto::from);
   }
 
-  @ApplicationModuleListener
-  public void handle(BookPlacedOnHold event) {
-    books.findAvailableBook(new Book.Barcode(event.inventoryNumber()))
+  public void addBook(AddBook command) {
+    books.save(Book.addBook(command));
+
+  }
+
+  public void holdBook(Barcode barcode) {
+    books.findAvailableBook(barcode)
         .map(Book::markOnHold)
         .map(books::save)
         .orElseThrow(() -> new IllegalArgumentException("Duplicate hold?"));
-  }
 
-  @ApplicationModuleListener
-  public void handle(BookAddedToCatalog event) {
-    var command = new Book.AddBook(new Book.Barcode(event.inventoryNumber()), event.title(),
-        event.isbn());
-    books.save(Book.addBook(command));
   }
-
 }
