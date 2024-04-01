@@ -37,14 +37,14 @@ public class CatalogManagement {
   @Transactional(readOnly = true)
   public Optional<BookDto> locate(Long id) {
     return catalogRepository.findById(id)
-        .map(mapper::toDto);
+        .map(BookDto::fromEntity);
   }
 
   @Transactional(readOnly = true)
   public List<BookDto> fetchBooks() {
     return catalogRepository.findAll()
         .stream()
-        .map(mapper::toDto)
+        .map(BookDto::fromEntity)
         .toList();
   }
 }

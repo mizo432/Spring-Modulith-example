@@ -1,4 +1,4 @@
-package undecided.demo.borrow.infrastructore.in;
+package undecided.demo.borrow.infrastructore.api;
 
 import java.time.LocalDate;
 import java.util.UUID;

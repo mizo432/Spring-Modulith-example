@@ -1,4 +1,4 @@
-package undecided.demo.catalog.ui;
+package undecided.demo.catalog.infrastructure.api;
 
 
 import java.util.List;

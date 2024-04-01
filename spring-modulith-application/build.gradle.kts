@@ -46,7 +46,7 @@ dependencies {
     implementation("org.jmolecules:jmolecules-layered-architecture")
     implementation("org.jmolecules:jmolecules-onion-architecture")
     implementation("org.jmolecules:jmolecules-ddd")
-
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
     testImplementation("org.jmolecules.integrations:jmolecules-archunit")
     testImplementation("com.tngtech.archunit:archunit-junit5:${property("archunitVersion")}")
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
