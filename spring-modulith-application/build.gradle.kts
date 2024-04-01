@@ -23,6 +23,7 @@ repositories {
 extra["springModulithVersion"] = "1.1.3"
 extra["jmoleculesBomVersion"] = "2023.1.2"
 extra["archunitVersion"] = "1.2.1"
+extra["mapStructVersion"] = "1.5.5.Final"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -44,9 +45,20 @@ dependencies {
     testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     implementation("org.jmolecules:jmolecules-layered-architecture")
     implementation("org.jmolecules:jmolecules-onion-architecture")
+    implementation("org.jmolecules:jmolecules-ddd")
 
     testImplementation("org.jmolecules.integrations:jmolecules-archunit")
-    testImplementation("com.tngtech.archunit:archunit-junit5:1.2.1")
+    testImplementation("com.tngtech.archunit:archunit-junit5:${property("archunitVersion")}")
+    annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+    annotationProcessor("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
+    implementation("org.mapstruct:mapstruct:${property("mapStructVersion")}")
+    implementation("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
+    compileOnly("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+    testImplementation("com.github.spotbugs:spotbugs-annotations")
+    testImplementation("org.assertj:assertj-core:3.25.1")
+    testAnnotationProcessor("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
+    testCompileOnly("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
+
 
 }
 
