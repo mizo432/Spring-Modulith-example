@@ -1,6 +1,6 @@
 server:
   shutdown: graceful
-  
+
 spring:
   jpa:
     open-in-view: false
@@ -8,4 +8,9 @@ spring:
     defer-datasource-initialization: true
   threads:
     virtual:
+      enabled: true
+  devtools:
+    livereload:
+      enabled: true
+    restart:
       enabled: true
