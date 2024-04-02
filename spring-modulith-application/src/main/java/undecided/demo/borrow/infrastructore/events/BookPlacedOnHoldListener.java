@@ -3,7 +3,7 @@ package undecided.demo.borrow.infrastructore.events;
 import lombok.RequiredArgsConstructor;
 import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Component;
-import undecided.demo.borrow.application.CirculationDesk;
+import undecided.demo.borrow.application.CirculationDeskCommand;
 import undecided.demo.borrow.domain.Book;
 import undecided.demo.borrow.domain.BookPlacedOnHold;
 
@@ -11,11 +11,11 @@ import undecided.demo.borrow.domain.BookPlacedOnHold;
 @RequiredArgsConstructor
 public class BookPlacedOnHoldListener {
 
-  private final CirculationDesk circulationDesk;
+  private final CirculationDeskCommand circulationDeskCommand;
 
   @ApplicationModuleListener
   public void handle(BookPlacedOnHold event) {
-    circulationDesk.holdBook(new Book.Barcode(event.inventoryNumber()));
+    circulationDeskCommand.holdBook(new Book.Barcode(event.inventoryNumber()));
 
   }
 

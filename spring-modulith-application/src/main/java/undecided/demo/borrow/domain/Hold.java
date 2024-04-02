@@ -29,6 +29,12 @@ public class Hold {
     return new Hold(command);
   }
 
+  /**
+   * Applies a unary operator to the current Hold instance and returns the result.
+   *
+   * @param function the unary operator to apply
+   * @return the result of applying the unary operator to the current Hold instance
+   */
   public Hold then(UnaryOperator<Hold> function) {
     return function.apply(this);
   }

@@ -1,7 +1,5 @@
 package undecided.demo.catalog.application;
 
-import java.util.List;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
@@ -15,7 +13,7 @@ import undecided.demo.catalog.domain.CatalogRepository;
 @Transactional
 @Service
 @RequiredArgsConstructor
-public class CatalogManagement {
+public class CatalogManagementCommand {
 
   private final CatalogRepository catalogRepository;
   private final ApplicationEventPublisher events;
@@ -23,27 +21,15 @@ public class CatalogManagement {
   /**
    * Add a new book to the library.
    */
-  public BookDto addToCatalog(String title, CatalogBook.Barcode catalogNumber, String isbn,
+  public CatalogBook addToCatalog(String title, CatalogBook.Barcode catalogNumber, String isbn,
       String authorName) {
     var book = new CatalogBook(title, catalogNumber, isbn, new CatalogBook.Author(authorName));
-    var dto = BookDto.fromEntity(catalogRepository.save(book));
+    CatalogBook insertedBook = catalogRepository.save(book);
     events.publishEvent(
-        new BookAddedToCatalog(book.getTitle(), book.getCatalogNumber().barcode(), book.getIsbn(),
-            book.getAuthor().name()));
-    return dto;
+        new BookAddedToCatalog(insertedBook.getTitle(), insertedBook.getCatalogNumber().barcode(),
+            insertedBook.getIsbn(),
+            insertedBook.getAuthor().name()));
+    return insertedBook;
   }
 
-  @Transactional(readOnly = true)
-  public Optional<BookDto> locate(Long id) {
-    return catalogRepository.findById(id)
-        .map(BookDto::fromEntity);
-  }
-
-  @Transactional(readOnly = true)
-  public List<BookDto> fetchBooks() {
-    return catalogRepository.findAll()
-        .stream()
-        .map(BookDto::fromEntity)
-        .toList();
-  }
 }

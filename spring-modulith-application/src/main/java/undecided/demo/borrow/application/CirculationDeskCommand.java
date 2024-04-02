@@ -1,7 +1,5 @@
 package undecided.demo.borrow.application;
 
-import java.util.Optional;
-import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import undecided.demo.borrow.domain.Book;
@@ -12,51 +10,42 @@ import undecided.demo.borrow.domain.Hold;
 import undecided.demo.borrow.domain.HoldEventPublisher;
 import undecided.demo.borrow.domain.HoldRepository;
 
-/**
- * The CirculationDesk class represents a circulation desk in a library. It handles activities
- * related to placing holds, adding books, holding books, and locating holds.
- */
 @Service
 @Transactional
-public class CirculationDesk {
+public class CirculationDeskCommand {
 
-  private final BookRepository books;
-  private final HoldRepository holds;
+  private final BookRepository bookRepository;
+  private final HoldRepository holdRepository;
   private final HoldEventPublisher eventPublisher;
 
-  public CirculationDesk(BookRepository books, HoldRepository holds,
+  public CirculationDeskCommand(BookRepository bookRepository, HoldRepository holdRepository,
       HoldEventPublisher eventPublisher) {
-    this.books = books;
-    this.holds = holds;
+    this.bookRepository = bookRepository;
+    this.holdRepository = holdRepository;
     this.eventPublisher = eventPublisher;
   }
 
-  public HoldDto placeHold(Hold.PlaceHold command) {
-    books.findAvailableBook(command.inventoryNumber())
+  public Hold createAndPublishHold(Hold.PlaceHold command) {
+    bookRepository.findAvailableBook(command.inventoryNumber())
         .orElseThrow(() -> new IllegalArgumentException("Book not found"));
 
-    return HoldDto.from(
-        Hold.placeHold(command)
-            .then(holds::save)
-            .then(eventPublisher::holdPlaced)
-    );
+    return saveAndPublishHold(Hold.placeHold(command));
   }
 
-  public Optional<HoldDto> locate(UUID holdId) {
-    return holds.findById(new Hold.HoldId(holdId))
-        .map(HoldDto::from);
+  private Hold saveAndPublishHold(Hold hold) {
+    return hold
+        .then(holdRepository::save)
+        .then(eventPublisher::holdPlaced);
   }
 
   public void addBook(AddBook command) {
-    books.save(Book.addBook(command));
-
+    bookRepository.save(Book.addBook(command));
   }
 
   public void holdBook(Barcode barcode) {
-    books.findAvailableBook(barcode)
+    bookRepository.findAvailableBook(barcode)
         .map(Book::markOnHold)
-        .map(books::save)
+        .map(bookRepository::save)
         .orElseThrow(() -> new IllegalArgumentException("Duplicate hold?"));
-
   }
 }

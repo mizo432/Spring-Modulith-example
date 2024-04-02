@@ -1,4 +1,4 @@
-package undecided.demo.borrow.application;
+package undecided.demo.borrow.infrastructore.api;
 
 import java.time.LocalDate;
 import lombok.Getter;

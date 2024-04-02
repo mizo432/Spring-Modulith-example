@@ -1,4 +1,4 @@
-package undecided.demo.catalog.application;
+package undecided.demo.catalog.infrastructure.api;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
