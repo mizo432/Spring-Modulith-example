@@ -1,5 +1,6 @@
 package undecided.demo.borrow.application;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import undecided.demo.borrow.domain.Book;
@@ -9,9 +10,11 @@ import undecided.demo.borrow.domain.BookRepository;
 import undecided.demo.borrow.domain.Hold;
 import undecided.demo.borrow.domain.HoldEventPublisher;
 import undecided.demo.borrow.domain.HoldRepository;
+import undecided.demo.shared.constants.MyConstants;
 
 @Service
 @Transactional
+@Slf4j
 public class CirculationDeskCommand {
 
   private final BookRepository bookRepository;
@@ -28,7 +31,7 @@ public class CirculationDeskCommand {
   public Hold createAndPublishHold(Hold.PlaceHold command) {
     bookRepository.findAvailableBook(command.inventoryNumber())
         .orElseThrow(() -> new IllegalArgumentException("Book not found"));
-
+    log.info(MyConstants.DUMMY_STRING);
     return saveAndPublishHold(Hold.placeHold(command));
   }
 

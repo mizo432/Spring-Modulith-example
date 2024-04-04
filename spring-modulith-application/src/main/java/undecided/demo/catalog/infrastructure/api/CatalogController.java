@@ -48,7 +48,7 @@ class CatalogController {
    */
   @GetMapping("/catalog/books/{id}")
   ResponseEntity<BookDto> viewSingleBook(@PathVariable("id") Long id) {
-    return catalogManagementQuery.locate(id).map(BookDto::fromEntity)
+    return catalogManagementQuery.findById(id).map(BookDto::fromEntity)
         .map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
   }
@@ -61,7 +61,7 @@ class CatalogController {
   @GetMapping("/catalog/books")
   ResponseEntity<List<BookDto>> viewBooks() {
     return ResponseEntity.ok(
-        catalogManagementQuery.fetchBooks().stream().map(BookDto::fromEntity).toList());
+        catalogManagementQuery.findAll().stream().map(BookDto::fromEntity).toList());
   }
 
   record AddBookRequest(String title, String catalogNumber,
