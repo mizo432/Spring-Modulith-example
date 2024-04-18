@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Component;
 import undecided.demo.borrow.application.CirculationDeskCommand;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.BookPlacedOnHold;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.BookPlacedOnHold;
 
 @Component
 @RequiredArgsConstructor

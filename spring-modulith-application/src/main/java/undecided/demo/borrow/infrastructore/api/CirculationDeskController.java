@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import undecided.demo.borrow.application.CirculationDeskCommand;
 import undecided.demo.borrow.application.CirculationDeskQuery;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.Patron.PatronId;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.Patron.PatronId;
 
 @RestController
 @RequiredArgsConstructor

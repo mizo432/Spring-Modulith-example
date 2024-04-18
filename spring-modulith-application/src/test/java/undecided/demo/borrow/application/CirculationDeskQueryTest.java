@@ -16,8 +16,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.HoldRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.HoldRepository;
 
 @ContextConfiguration(classes = {CirculationDeskQuery.class})
 @ExtendWith(SpringExtension.class)

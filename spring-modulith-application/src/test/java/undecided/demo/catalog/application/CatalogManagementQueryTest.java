@@ -1,6 +1,5 @@
 package undecided.demo.catalog.application;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,8 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import undecided.demo.catalog.domain.CatalogBook;
-import undecided.demo.catalog.domain.CatalogRepository;
+import undecided.demo.catalog.model.CatalogBook;
+import undecided.demo.catalog.model.CatalogRepository;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

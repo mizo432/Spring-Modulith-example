@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import undecided.demo.catalog.domain.CatalogBook;
-import undecided.demo.catalog.domain.CatalogRepository;
+import undecided.demo.catalog.model.CatalogBook;
+import undecided.demo.catalog.model.CatalogRepository;
 
 /**
  * The CatalogManagementQuery class is responsible for querying the book catalog.

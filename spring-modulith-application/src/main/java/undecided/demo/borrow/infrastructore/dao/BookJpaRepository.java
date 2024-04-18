@@ -3,7 +3,7 @@ package undecided.demo.borrow.infrastructore.dao;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
-import undecided.demo.borrow.domain.Book;
+import undecided.demo.borrow.model.Book;
 
 
 public interface BookJpaRepository extends JpaRepository<BookEntity, UUID> {

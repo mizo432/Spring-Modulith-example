@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Component;
 import undecided.demo.borrow.application.CirculationDeskCommand;
-import undecided.demo.borrow.domain.Book.AddBook;
-import undecided.demo.borrow.domain.Book.Barcode;
+import undecided.demo.borrow.model.Book.AddBook;
+import undecided.demo.borrow.model.Book.Barcode;
 import undecided.demo.catalog.BookAddedToCatalog;
 
 @Component

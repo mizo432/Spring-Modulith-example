@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import undecided.demo.catalog.application.CatalogManagementCommand;
 import undecided.demo.catalog.application.CatalogManagementQuery;
-import undecided.demo.catalog.domain.CatalogBook.Barcode;
+import undecided.demo.catalog.model.CatalogBook.Barcode;
 
 /**
  * The CatalogController class is responsible for handling HTTP requests related to the book

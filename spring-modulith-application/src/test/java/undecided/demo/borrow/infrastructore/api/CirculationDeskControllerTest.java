@@ -30,17 +30,17 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import undecided.demo.borrow.application.CirculationDeskCommand;
 import undecided.demo.borrow.application.CirculationDeskQuery;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.BookRepository;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.HoldEventPublisher;
-import undecided.demo.borrow.domain.HoldRepository;
-import undecided.demo.borrow.domain.Patron;
 import undecided.demo.borrow.infrastructore.dao.BookJpaRepository;
 import undecided.demo.borrow.infrastructore.dao.HoldEntity;
 import undecided.demo.borrow.infrastructore.dao.HoldJpaRepository;
 import undecided.demo.borrow.infrastructore.datasource.BookRepositoryAdapter;
 import undecided.demo.borrow.infrastructore.datasource.HoldRepositoryAdapter;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.BookRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.HoldEventPublisher;
+import undecided.demo.borrow.model.HoldRepository;
+import undecided.demo.borrow.model.Patron;
 
 @ContextConfiguration(classes = {CirculationDeskController.class, CirculationDeskQuery.class,
     CirculationDeskCommand.class})

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common-lib/Spring-Modulith-example.common-lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common-lib/Spring-Modulith-example.common-lib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared-lib/Spring-Modulith-example.shared-lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shared-lib/Spring-Modulith-example.shared-lib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shared-lib/Spring-Modulith-example.shared-lib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/shared-lib/Spring-Modulith-example.shared-lib.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-modulith-application/Spring-Modulith-example.spring-modulith-application.test.iml" />
     </modules>

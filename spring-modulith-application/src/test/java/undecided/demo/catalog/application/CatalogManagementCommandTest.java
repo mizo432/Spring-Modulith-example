@@ -14,9 +14,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import undecided.demo.catalog.domain.CatalogBook;
-import undecided.demo.catalog.domain.CatalogRepository;
 import undecided.demo.catalog.infrastructure.api.BookMapper;
+import undecided.demo.catalog.model.CatalogBook;
+import undecided.demo.catalog.model.CatalogRepository;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

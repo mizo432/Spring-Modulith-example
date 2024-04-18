@@ -6,8 +6,8 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import undecided.demo.catalog.BookAddedToCatalog;
-import undecided.demo.catalog.domain.CatalogBook;
-import undecided.demo.catalog.domain.CatalogRepository;
+import undecided.demo.catalog.model.CatalogBook;
+import undecided.demo.catalog.model.CatalogRepository;
 
 @Slf4j
 @Transactional

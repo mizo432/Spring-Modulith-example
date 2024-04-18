@@ -5,10 +5,10 @@ import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.HoldRepository;
 import undecided.demo.borrow.infrastructore.dao.HoldEntity;
 import undecided.demo.borrow.infrastructore.dao.HoldJpaRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.HoldRepository;
 
 @Component
 @Transactional

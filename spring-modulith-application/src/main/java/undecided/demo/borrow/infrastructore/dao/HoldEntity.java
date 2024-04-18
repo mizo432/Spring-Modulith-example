@@ -14,9 +14,9 @@ import java.util.UUID;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.jmolecules.ddd.annotation.Identity;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.Patron.PatronId;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.Patron.PatronId;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Getter

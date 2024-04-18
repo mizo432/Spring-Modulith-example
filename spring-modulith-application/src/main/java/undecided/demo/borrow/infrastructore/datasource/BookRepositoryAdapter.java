@@ -4,10 +4,10 @@ import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.BookRepository;
 import undecided.demo.borrow.infrastructore.dao.BookEntity;
 import undecided.demo.borrow.infrastructore.dao.BookJpaRepository;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.BookRepository;
 
 @Component
 @Transactional

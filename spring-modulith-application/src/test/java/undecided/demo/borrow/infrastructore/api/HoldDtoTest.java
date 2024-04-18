@@ -8,9 +8,9 @@ import static org.mockito.Mockito.when;
 import java.time.LocalDate;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.Patron;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.Patron;
 
 class HoldDtoTest {
 

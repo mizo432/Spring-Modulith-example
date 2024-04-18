@@ -3,14 +3,14 @@ package undecided.demo.borrow.application;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.Book.AddBook;
-import undecided.demo.borrow.domain.Book.Barcode;
-import undecided.demo.borrow.domain.BookRepository;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.HoldEventPublisher;
-import undecided.demo.borrow.domain.HoldRepository;
-import undecided.demo.shared.constants.MyConstants;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.Book.AddBook;
+import undecided.demo.borrow.model.Book.Barcode;
+import undecided.demo.borrow.model.BookRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.HoldEventPublisher;
+import undecided.demo.borrow.model.HoldRepository;
+import undecided.shared.constants.constants.MyConstants;
 
 @Service
 @Transactional

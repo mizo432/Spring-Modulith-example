@@ -2,7 +2,7 @@ package undecided.demo.borrow.infrastructore.api;
 
 import java.time.LocalDate;
 import lombok.Getter;
-import undecided.demo.borrow.domain.Hold;
+import undecided.demo.borrow.model.Hold;
 
 @Getter
 public class HoldDto {

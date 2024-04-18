@@ -28,8 +28,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import undecided.demo.catalog.application.CatalogManagementCommand;
 import undecided.demo.catalog.application.CatalogManagementQuery;
-import undecided.demo.catalog.domain.CatalogBook;
-import undecided.demo.catalog.domain.CatalogRepository;
+import undecided.demo.catalog.model.CatalogBook;
+import undecided.demo.catalog.model.CatalogRepository;
 
 @ContextConfiguration(classes = {CatalogController.class, CatalogManagementCommand.class,
     CatalogManagementQuery.class})

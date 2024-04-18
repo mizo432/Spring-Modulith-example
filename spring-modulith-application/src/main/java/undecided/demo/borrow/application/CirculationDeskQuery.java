@@ -5,9 +5,9 @@ import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.Hold.HoldId;
-import undecided.demo.borrow.domain.HoldRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.Hold.HoldId;
+import undecided.demo.borrow.model.HoldRepository;
 
 @Service
 @Transactional

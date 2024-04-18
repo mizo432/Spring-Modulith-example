@@ -26,6 +26,8 @@ extra["archunitVersion"] = "1.2.1"
 extra["mapStructVersion"] = "1.5.5.Final"
 
 dependencies {
+    implementation(project(":common-lib"))
+    implementation(project(":shared-lib"))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")

@@ -17,12 +17,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.aot.DisabledInAotMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import undecided.demo.borrow.domain.Book;
-import undecided.demo.borrow.domain.BookRepository;
-import undecided.demo.borrow.domain.Hold;
-import undecided.demo.borrow.domain.HoldEventPublisher;
-import undecided.demo.borrow.domain.HoldRepository;
-import undecided.demo.borrow.domain.Patron;
+import undecided.demo.borrow.model.Book;
+import undecided.demo.borrow.model.BookRepository;
+import undecided.demo.borrow.model.Hold;
+import undecided.demo.borrow.model.HoldEventPublisher;
+import undecided.demo.borrow.model.HoldRepository;
+import undecided.demo.borrow.model.Patron;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

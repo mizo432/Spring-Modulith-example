@@ -3,8 +3,8 @@ package undecided.demo.catalog.application;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
-import undecided.demo.catalog.domain.CatalogBook;
 import undecided.demo.catalog.infrastructure.api.BookDto;
+import undecided.demo.catalog.model.CatalogBook;
 
 class BookDtoTest {
 

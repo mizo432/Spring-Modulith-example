@@ -12,7 +12,7 @@ import java.util.UUID;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.jmolecules.ddd.annotation.Identity;
-import undecided.demo.borrow.domain.Book;
+import undecided.demo.borrow.model.Book;
 
 @Getter
 @Entity
