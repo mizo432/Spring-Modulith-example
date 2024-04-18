@@ -23,7 +23,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.32")
     testImplementation("com.github.spotbugs:spotbugs-annotations")
     testImplementation("org.assertj:assertj-core:3.25.3")
-
+    implementation("org.jetbrains:annotations:24.1.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
 }
 
 tasks.withType<Test> {
