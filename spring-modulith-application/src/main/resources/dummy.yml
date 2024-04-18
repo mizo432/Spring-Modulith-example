@@ -1,0 +1,5 @@
+report:
+  title: "My Report"
+  definitions:
+    id1: "aaaaa.yml"
+    id2: "bbbb.yml"
