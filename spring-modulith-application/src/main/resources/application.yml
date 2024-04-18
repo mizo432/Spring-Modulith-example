@@ -14,3 +14,7 @@ spring:
       enabled: true
     restart:
       enabled: true
+logging:
+  level:
+    root: warn
+    web: info

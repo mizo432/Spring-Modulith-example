@@ -25,6 +25,16 @@ public class EmployeeRecord {
   private Long id;
   @Column(unique = true, nullable = false, length = 10)
   private String code;
+  @Column(unique = true, nullable = false, length = 10)
+  private String name;
+
+  public static EmployeeRecord create(Employee employee) {
+    EmployeeRecord result = new EmployeeRecord();
+    result.setId(employee.id().value());
+    result.setCode(employee.code().value());
+    result.setName(employee.name().value());
+    return result;
+  }
 
   @Override
   public final boolean equals(Object o) {
@@ -55,6 +65,6 @@ public class EmployeeRecord {
 
   public Employee toEntity() {
     return Employee.reconstruct(id,
-        code);
+        code, name);
   }
 }

@@ -8,12 +8,17 @@ import java.util.List;
 import lombok.NoArgsConstructor;
 import undecided.demo.relationship.model.party.PartyId;
 
-public record Employee(PartyId id, EmployeeCode code) {
+public record Employee(PartyId id, EmployeeCode code, EmployeeName name) {
 
-  public static final Employee EMPTY = new Employee(PartyId.EMPTY, EmployeeCode.EMPTY);
+  public static final Employee EMPTY = new Employee(PartyId.EMPTY, EmployeeCode.EMPTY,
+      EmployeeName.EMPTY);
 
-  public static Employee reconstruct(Long id, String code) {
-    return new Employee(new PartyId(id), new EmployeeCode(code));
+  public static Employee reconstruct(Long id, String code, String name) {
+    return new Employee(new PartyId(id), new EmployeeCode(code), new EmployeeName(name));
+  }
+
+  public static Employee create(Long id, String code, String name) {
+    return new Employee(PartyId.of(id), EmployeeCode.of(code), EmployeeName.of(name));
   }
 
   public boolean isEmpty() {

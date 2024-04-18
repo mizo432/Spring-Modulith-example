@@ -2,17 +2,16 @@ package undecided.demo.relationship.presentation.api.employee;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.NoArgsConstructor;
 import undecided.demo.relationship.model.employee.Employee;
 import undecided.demo.relationship.model.employee.Employee.Employees;
 
-@NoArgsConstructor
-public class EmployeeDto {
-
-  private Long employeeId;
+public record EmployeeDto(Long id, String code, String name) {
 
   public static EmployeeDto convertFromEntity(Employee employee) {
-    return new EmployeeDto();
+    return new EmployeeDto(
+        employee.id().value(),
+        employee.code().value(),
+        null);
   }
 
   public static List<EmployeeDto> convertFromEntities(Employees values) {
@@ -21,4 +20,7 @@ public class EmployeeDto {
         .collect(Collectors.toList());
   }
 
+  public Employee toEntity() {
+    return Employee.create(id, code, name);
+  }
 }

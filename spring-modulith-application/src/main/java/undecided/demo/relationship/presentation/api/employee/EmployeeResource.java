@@ -1,12 +1,16 @@
 package undecided.demo.relationship.presentation.api.employee;
 
+import java.net.URI;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import undecided.common.primitive.Strings2;
+import undecided.demo.relationship.appl.command.employee.AddEmployeeCommand;
 import undecided.demo.relationship.appl.query.employee.EmployeeQuery;
 import undecided.demo.relationship.model.employee.Employee;
 import undecided.demo.relationship.model.employee.EmployeeCode;
@@ -17,6 +21,7 @@ import undecided.demo.relationship.model.party.PartyId;
 public class EmployeeResource {
 
   private final EmployeeQuery employeeQuery;
+  private final AddEmployeeCommand addEmployeeCommand;
 
 
   @GetMapping(path = "api/v1/employees")
@@ -43,6 +48,14 @@ public class EmployeeResource {
     }
     EmployeeDto employeeDto = EmployeeDto.convertFromEntity(employee);
     return ResponseEntity.ok(employeeDto);
+
+  }
+
+  @PostMapping(path = "api/v1/employees")
+  ResponseEntity<EmployeeDto> post(@RequestBody EmployeeDto employeeDto) {
+    Employee employee = employeeDto.toEntity();
+    EmployeeDto result = EmployeeDto.convertFromEntity(addEmployeeCommand.execute(employee));
+    return ResponseEntity.created(URI.create("api/v1/employees/" + result.id())).body(result);
 
   }
 
