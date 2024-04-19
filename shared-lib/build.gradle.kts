@@ -33,6 +33,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("com.github.spotbugs:spotbugs-annotations")
     testImplementation("org.assertj:assertj-core:3.25.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+
 
 }
 
