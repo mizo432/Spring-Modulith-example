@@ -1,6 +1,6 @@
 package undecided.common.primitive;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ public class Strings2Test {
     String str = "Hello";
     String surroundString = "*";
     String result = Strings2.surround(str, surroundString);
-    assertEquals("*Hello*", result);
+    assertThat(result).isEqualTo("*Hello*");
   }
 
   @Test
@@ -19,7 +19,7 @@ public class Strings2Test {
     String str = "Hello";
     String surroundString = "";
     String result = Strings2.surround(str, surroundString);
-    assertEquals("Hello", result);
+    assertThat(result).isEqualTo("Hello");
   }
 
   @Test
@@ -27,7 +27,7 @@ public class Strings2Test {
     String str = "";
     String surroundString = "*";
     String result = Strings2.surround(str, surroundString);
-    assertEquals("**", result);
+    assertThat(result).isEqualTo("**");
   }
 
   @Test
@@ -35,7 +35,7 @@ public class Strings2Test {
     String str = "This is a long string";
     String surroundString = "#";
     String result = Strings2.surround(str, surroundString);
-    assertEquals("#This is a long string#", result);
+    assertThat(result).isEqualTo("#This is a long string#");
   }
 
   @Test
@@ -43,7 +43,7 @@ public class Strings2Test {
     String str = null;
     String defaultString = "Default";
     String result = Strings2.defaultIfNull(str, defaultString);
-    assertEquals("Default", result);
+    assertThat(result).isEqualTo("Default");
   }
 
   @Test
@@ -51,7 +51,7 @@ public class Strings2Test {
     String str = "Hello";
     String defaultString = "Default";
     String result = Strings2.defaultIfNull(str, defaultString);
-    assertEquals("Hello", result);
+    assertThat(result).isEqualTo("Hello");
   }
 
   @Test
@@ -59,7 +59,7 @@ public class Strings2Test {
     String str = "Hello";
     String surroundString = "*";
     String result = Strings2.surroundSilently(str, surroundString);
-    assertEquals("*Hello*", result);
+    assertThat(result).isEqualTo("*Hello*");
   }
 
   @Test
@@ -67,7 +67,7 @@ public class Strings2Test {
     String str = "";
     String surroundString = "*";
     String result = Strings2.surroundSilently(str, surroundString);
-    assertEquals("**", result);
+    assertThat(result).isEqualTo("**");
   }
 
   @Test
@@ -75,7 +75,7 @@ public class Strings2Test {
     String str = null;
     String surroundString = "*";
     String result = Strings2.surroundSilently(str, surroundString);
-    assertEquals("**", result);
+    assertThat(result).isEqualTo("**");
   }
 
   @Test
@@ -83,6 +83,6 @@ public class Strings2Test {
     String str = "Hello";
     String surroundString = null;
     String result = Strings2.surroundSilently(str, surroundString);
-    assertEquals("Hello", result);
+    assertThat(result).isEqualTo("Hello");
   }
 }
