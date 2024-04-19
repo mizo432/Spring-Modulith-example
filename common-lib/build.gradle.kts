@@ -21,7 +21,7 @@ repositories {
 dependencies {
     compileOnly("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
-    testImplementation("com.github.spotbugs:spotbugs-annotations")
+    implementation("com.github.spotbugs:spotbugs-annotations:4.8.4")
     testImplementation("org.assertj:assertj-core:3.25.3")
     implementation("org.jetbrains:annotations:24.1.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
