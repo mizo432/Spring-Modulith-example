@@ -57,7 +57,7 @@ dependencies {
     implementation("org.mapstruct:mapstruct:${property("mapStructVersion")}")
     implementation("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
     compileOnly("org.projectlombok:lombok-mapstruct-binding:0.2.0")
-    testImplementation("com.github.spotbugs:spotbugs-annotations")
+    testImplementation("com.github.spotbugs:spotbugs-annotations:4.8.4")
     testImplementation("org.assertj:assertj-core:3.25.3")
     testAnnotationProcessor("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")
     testCompileOnly("org.mapstruct:mapstruct-processor:${property("mapStructVersion")}")

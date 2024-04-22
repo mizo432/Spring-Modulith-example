@@ -68,7 +68,7 @@ public class EmployeeResource {
 
   }
 
-  @GetMapping(path = "api/v1/employee/{employeeIdOrEmployeeCode}")
+  @GetMapping(path = "api/v1/employee/{employeeIdOrEmployeeCode}/json")
   ResponseEntity<Resource> downloadFile(
       @PathVariable("employeeIdOrEmployeeCode") String employeeIdOrEmployeeCode) {
     Employee employee;
