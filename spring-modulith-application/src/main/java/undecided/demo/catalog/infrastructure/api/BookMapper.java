@@ -10,5 +10,4 @@ public interface BookMapper {
 
   BookDto toDto(CatalogBook catalogBook);
 
-  CatalogBook toEntity(BookDto bookDto);
 }
